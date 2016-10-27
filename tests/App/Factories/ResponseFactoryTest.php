@@ -2,35 +2,29 @@
 
 namespace App\Factories;
 
-use Silex\Application;
-
-use App\Factories\ResponseFactory;
-
 /**
- * Class VagasJsonDataMapper
- * @package App
+ * Class VagasJsonDataMapper.
+ *
  * @author Eduardo Galbiati <eduardo.galbiati7@gmail.com>
  */
 class ResponseFactoryTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var \Silex\Application $app
-     */ 
+     * @var \Silex\Application
+     */
     protected $app;
 
     /**
-     * Método que cria o Silex\Application
-     * @return void
+     * Método que cria o Silex\Application.
      */
-    function setUp()
+    public function setUp()
     {
         parent::setUp();
         $this->app = createApplication();
     }
 
     /**
-     * Teste de dependencias para o teste
-     * @return void
+     * Teste de dependencias para o teste.
      */
     public function assertPreConditions()
     {
@@ -43,38 +37,32 @@ class ResponseFactoryTest extends \PHPUnit_Framework_TestCase
 
     /**
      * Teste de factory em response deve retornar
-     * una instancia de JsonResponseInterface
-     * @return void
+     * una instancia de JsonResponseInterface.
      */
     public function testFactoryToJson()
     {
         $this->app['response'] = [
-            'type' => 'json'
+            'type' => 'json',
         ];
 
         $response = $this->app['ResponseFactory']->create();
-        
-        $this->assertInstanceOf('\App\Services\JsonResponseService', $response);
 
+        $this->assertInstanceOf('\App\Services\JsonResponseService', $response);
     }
 
     /**
-     * Teste de factory para um tipo de resposta inexistente
-     * @return void
+     * Teste de factory para um tipo de resposta inexistente.
+     *
      * @expectedException     \ReflectionException
      */
     public function testFactoryToJson2ShouldNotWork()
     {
         $this->app['response'] = [
-            'type' => 'json2'
+            'type' => 'json2',
         ];
 
         $response = $this->app['ResponseFactory']->create();
 
         $this->assertInstanceOf('\App\Services\JsonResponseService', $response);
-
     }
-    
-   
-  
-} 
+}

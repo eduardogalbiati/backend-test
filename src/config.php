@@ -9,10 +9,10 @@
 $app['debug'] = true;
 
 $app['database'] = [
-	'name' => 'json',
-	'dbname' => dirname(__DIR__).'/vagas.json'
+    'name' => 'json',
+    'dbname' => dirname(__DIR__).'/vagas.json',
 ];
 
 $app['response'] = [
-	'type' => 'json',
+    'type' => 'json',
 ];

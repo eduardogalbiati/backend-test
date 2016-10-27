@@ -2,37 +2,32 @@
 
 namespace App\Vagas;
 
-use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-
 use App\Vagas\Controller\VagasController;
 
 /**
- * Class VagasJsonDataMapper
- * @package App
+ * Class VagasJsonDataMapper.
+ *
  * @author Eduardo Galbiati <eduardo.galbiati7@gmail.com>
  */
 class VagasControllerTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var \Silex\Application $app
-     */ 
+     * @var \Silex\Application
+     */
     protected $app;
 
     /**
-     * Método que cria o Silex\Application
-     * @return void
+     * Método que cria o Silex\Application.
      */
-    function setUp()
+    public function setUp()
     {
         parent::setUp();
         $this->app = createApplication();
     }
 
     /**
-     * Teste de dependencias para o teste
-     * @return void
+     * Teste de dependencias para o teste.
      */
     public function assertPreConditions()
     {
@@ -45,8 +40,7 @@ class VagasControllerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Teste de resposta do controller caso tudo ok
-     * @return void
+     * Teste de resposta do controller caso tudo ok.
      */
     public function testListResponseOk()
     {
@@ -63,8 +57,7 @@ class VagasControllerTest extends \PHPUnit_Framework_TestCase
 
     /**
      * Teste de resposta do controller caso tenha problemas
-     * no carregamento de informações
-     * @return void
+     * no carregamento de informações.
      */
     public function testListResponseException()
     {
@@ -85,4 +78,4 @@ class VagasControllerTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf('\Symfony\Component\HttpFoundation\Response', $response);
         $this->assertEquals('400', $response->getStatusCode());
     }
-} 
+}

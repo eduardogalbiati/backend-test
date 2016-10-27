@@ -11,9 +11,9 @@ $app['vagas.service'] = function ($app) {
 };
 
 $app['ResponseFactory'] = function ($app) {
-	return new App\Factories\ResponseFactory($app);
+    return new App\Factories\ResponseFactory($app);
 };
 
-$app['DataMapperFactory'] = function($app) {
-	return new App\Factories\DataMapperFactory($app);
+$app['DataMapperFactory'] = function ($app) {
+    return new App\Factories\DataMapperFactory($app);
 };
