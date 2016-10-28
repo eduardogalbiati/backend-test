@@ -118,7 +118,7 @@ body:
 
 # Arquitetura
 ### Visão Geral
- -- Diagrama Elementos --
+![Diagram](https://raw.githubusercontent.com/edugalb/backend-test/master/docs/diagram.jpg)
  
 ### Front-Controller
 ```php
