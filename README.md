@@ -43,7 +43,7 @@ php -S localhost:8000 -t web
 phpunit
 ```
 CodeCoverage: 100%
-![Code Coverage](https://github.com/edugalb/backend-test/docs/coverage2.jpg)
+![Code Coverage](https://raw.githubusercontent.com/edugalb/backend-test/master/docs/coverage2.jpg)
 
 ### Endpoints
 ###### Retorna uma listagem de todas as vagas
